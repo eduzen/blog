@@ -49,7 +49,7 @@ function App() {
 
   return (
     <div className="App">
-      <Header title="eduzen" sections={sections} />
+      <Header />
       <Main title="Posts" posts={posts} />
     </div>
   );

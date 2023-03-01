@@ -3,6 +3,7 @@ import Grid from '@mui/material/Grid';
 import Typography from "@mui/material/Typography";
 import Divider from '@mui/material/Divider';
 // import BlogPost from '../postCard';
+import BlogPost from '../postText';
 
 interface Post {
   url: string;
@@ -22,24 +23,25 @@ export default function Main(props: MainProps) {
   return (
     <div className={title}>
       {posts.map((post) => (
-        <div key={post.url}>
-          <Typography variant="h6" gutterBottom>
-            {post.published_date} - {title}
-          </Typography>
-          <Divider />
-          <Grid
-              item
-              xs={12}
-              md={8}
-              sx={{
-                '& .markdown': {
-                  py: 3,
-                },
-              }}
-            >
-          {post.text}
-          </Grid>
-        </div>
+        <BlogPost title={post.title} content={post.text} />
+        // <div key={post.url}>
+        //   <Typography variant="h6" gutterBottom>
+        //     {post.published_date} - {title}
+        //   </Typography>
+        //   <Divider />
+        //   <Grid
+        //       item
+        //       xs={12}
+        //       md={8}
+        //       sx={{
+        //         '& .markdown': {
+        //           py: 3,
+        //         },
+        //       }}
+        //     >
+        //   {post.text}
+        //   </Grid>
+        // </div>
       ))}
     </div>
   );
