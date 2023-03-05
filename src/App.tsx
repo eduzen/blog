@@ -17,7 +17,6 @@ interface Post {
   published_date: string;
 }
 
-//const url = "https://eduzen.ar/api/";
 const url = `${process.env.REACT_APP_URL}`;
 const username = `${process.env.REACT_APP_USERNAME}`;
 const password = `${process.env.REACT_APP_PASSWORD}`;
@@ -43,6 +42,7 @@ function App() {
       setPosts(response["results"]);
     })
     .catch((error) => {
+      console.log("There has been a problem with your fetch operation: ", error)
       setError(error);
     });
   }, []);
